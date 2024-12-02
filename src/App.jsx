@@ -1,8 +1,9 @@
 // import React from "react"
+import Login from "./Components/Login"
 
 function App(){
-  return <div>
-    <h2>Learning React</h2>
+  return <div className="main">
+    <Login />
   </div>
 }
 

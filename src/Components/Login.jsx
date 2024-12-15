@@ -11,14 +11,42 @@ function Login(){
         setStyle({ backgroundColor: "black" })
     }
 
+    const [firstName, setName] = useState("")
+    const [fTxt, setTxt] = useState("")
+    const [secondName, setSecondName] = useState("")
+    const [sTxt, setStxt] = useState("");
+    //this is just too much....so to manage complex states we can
+    //have objects inside our useState()
+
+
+    function handlefChange(event){
+        setName(event.target.value)
+        console.log("typing", event.target.value)
+    }
+
+    function handlesChange(event){
+        setSecondName(event.target.value)
+    }
+    
+    function handleClickb(event){
+        setTxt(firstName);
+        // setName(firstName)
+        // setSecondName(secondName)
+        setStxt(secondName)
+        event.preventDefault();
+    }
+
 
     return <div className="form-body">
         <div className="wrap">
         <p>Login Form</p>
-        <form action="">
-            <Input type="text" placeholder="Username"/>
+        <p>Hello {fTxt} {sTxt} </p>
+        <form action="" onSubmit={handleClickb}>
+            {/* <Input type="text" placeholder="Username"/> */}
+            <Input type="text" placeholder="first Name" onChange={handlefChange} value={firstName} />
+            <Input type="text" placeholder="second Name" onChange={handlesChange} value={secondName} />
             <Input type="password" placeholder="Password"/>
-            <input style={style} onMouseOver={onOver} onMouseOut={onLeave} className="btn" type="button" value="Login"/>
+            <input style={style} onMouseOver={onOver} onMouseOut={onLeave} className="btn" type="submit" value="Login"/>
         </form>
         <p>Or</p>
         <div className="line"></div>

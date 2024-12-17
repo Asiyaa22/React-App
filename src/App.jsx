@@ -3,8 +3,8 @@ import Login from "./Components/Login"
 import Register from "./Components/Register"
 
 // const loggedIn = false;
-// const isRegistered = true;
-const isRegistered = false;
+const isRegistered = true;
+// const isRegistered = false;
 
 // function conditionalRendering(){
 //   if(loggedIn === true){
